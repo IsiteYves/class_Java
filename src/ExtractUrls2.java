@@ -26,11 +26,8 @@ class ExtractUrls2 {
                 filePath += baseURL + "\\" + baseURL + ".html";
             else
                 filePath += baseURL + "\\" + str;
-            String extension = "\""+filePath.substring(filePath.length() - 4, filePath.length())+"\"";
-            boolean eqPhp = extension == "\".php\"";
-            System.out.println("\"" + extension + "\"");
-            if (eqPhp) {
-                System.out.println("PHP FOUND!!");
+            String extension = filePath.substring(filePath.length() - 4, filePath.length());
+            if (extension.equals(".php")) {
                 filePath += ".html";
             }
             File newFile = new File(filePath);
